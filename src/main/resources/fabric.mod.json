@@ -4,9 +4,9 @@
     "version": "${version}",
 
     "name": "BoatHud",
-    "description": "This mod adds a racing style HUD, configurable, for riding a boat, and is designed mostly for racing boats on ice.",
+    "description": "This mod adds a HUD that is configured for riding a boat, and is designed for boat racing. This version is modified to include a better compact mode.",
     "authors": [
-        "hibi"
+        "hibi, Sotumney"
     ],
     "contact": {
         "homepage": "https://hibiscus.pet/mods/boathud",
