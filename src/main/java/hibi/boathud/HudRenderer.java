@@ -74,11 +74,23 @@ public class HudRenderer {
 
 		} else { // Compact mode
 			// Overlay texture and bar
-			graphics.drawTexture(WIDGETS_TEXTURE, i - 91, this.scaledHeight - 83, 0, 50, 182, 20);
-			this.renderBar(graphics, i - 91, this.scaledHeight - 83);
+			graphics.drawTexture(WIDGETS_TEXTURE, i - 91, this.scaledHeight - 61, 0, 50, 182, 20);
+			this.renderBar(graphics, i - 91, this.scaledHeight - 61);
+
+			// Sprites
+			
+			// Left-right
+
+			graphics.drawTexture(WIDGETS_TEXTURE, i - 21, this.scaledHeight - 55, 61, this.client.options.leftKey.isPressed() ? 38 : 30, 17, 8);
+			graphics.drawTexture(WIDGETS_TEXTURE, i + 3, this.scaledHeight - 55, 79, this.client.options.rightKey.isPressed() ? 38 : 30, 17, 8);
+			// Brake-throttle bar
+
+			graphics.drawTexture(WIDGETS_TEXTURE, i, this.scaledHeight - 45, 0, this.client.options.forwardKey.isPressed() ? 45 : 40, 61, 5);
+			graphics.drawTexture(WIDGETS_TEXTURE, i - 61, this.scaledHeight - 45, 0, this.client.options.backKey.isPressed() ? 35 : 30, 61, 5);
 			// Speed and drift angle
-			this.typeCentered(graphics, String.format(Config.speedFormat, this.displayedSpeed * Config.speedRate), i - 58, this.scaledHeight - 76, 0xFFFFFF);
-			this.typeCentered(graphics, String.format(Config.angleFormat, Common.hudData.driftAngle), i + 58, this.scaledHeight - 76, 0xFFFFFF);
+
+			this.typeCentered(graphics, String.format(Config.speedFormat, this.displayedSpeed * Config.speedRate), i - 58, this.scaledHeight - 54, 0xFFFFFF);
+			this.typeCentered(graphics, String.format(Config.angleFormat, Common.hudData.driftAngle), i + 58, this.scaledHeight - 54, 0xFFFFFF);
 		}
 		RenderSystem.disableBlend();
 	}
